@@ -1,0 +1,160 @@
+/* themed tokens */
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.officeHourCalender {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+}
+.officeHourCalender.teams {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.links a {
+  text-decoration: none;
+  color: "[theme:link, default:#03787c]";
+  color: var(--link);
+}
+.links a:hover {
+  text-decoration: underline;
+  color: "[theme:linkHovered, default: #014446]";
+  color: var(--linkHovered);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.slides.shifting {
+  transition: left 0.2s ease-out;
+}
+
+.control.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.slide {
+  width: 300px;
+  margin: 8px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 1s;
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  text-wrap: wrap;
+  gap: 10px;
+}
+.slide .date {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.slide span {
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 16px;
+  margin: 3px auto;
+  display: flex;
+  align-items: center;
+}
+
+.slide span img {
+  width: 16px;
+  margin-right: 8px;
+  height: auto;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.prev,
+.next {
+  background-size: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.prev {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+  left: -27px;
+}
+
+.next {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+  right: -27px;
+}
+
+.prev:active,
+.next:active {
+  transform: scale(0.8);
+}
+
+.calender_row {
+  display: flex;
+}
+
+.button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: rgb(0, 120, 212);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.text_title {
+  font-size: 18px;
+  font-weight: 600;
+}/*# sourceMappingURL=OfficeHourCalenderWebPart.module.css.map */

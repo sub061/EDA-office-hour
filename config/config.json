@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "office-hour-calender-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/officeHourCalender/OfficeHourCalenderWebPart.js",
+          "manifest": "./src/webparts/officeHourCalender/OfficeHourCalenderWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "OfficeHourCalenderWebPartStrings": "lib/webparts/officeHourCalender/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "office-hour-calender-client-side-solution",
+    "id": "67eeb87b-6d3c-42e6-b112-21d5ccd272cf",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "office-hour-calender description"
+      },
+      "longDescription": {
+        "default": "office-hour-calender description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "office-hour-calender Feature",
+        "description": "The feature that activates elements of the office-hour-calender solution.",
+        "id": "4e4527db-4f89-4d1f-af42-fd856f781834",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/office-hour-calender.sppkg"
+  }
+}
