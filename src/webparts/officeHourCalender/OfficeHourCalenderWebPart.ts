@@ -12,6 +12,7 @@ import { Slider } from './Slider';
 
 export interface IOfficeHourCalenderWebPartProps {
   description: string;
+  meetingName: string;
   noOfGrid: string;
   meetingType: string;
   absoluteURL: any;
@@ -46,7 +47,7 @@ export default class OfficeHourCalenderWebPart extends BaseClientSideWebPart<IOf
   public render(): void {
     this.domElement.innerHTML = `
     <div>
-    <p><span class="text_title">Epic Reporting Office Hours </span></p>
+    <p><span class="text_title"> ${this.properties.meetingName} </span></p>
     </div>
       <div id="slider" class="slider ${styles.slider}">
         <div class="wrapper">
@@ -183,7 +184,10 @@ console.log()
           },
           groups: [
             {
-               groupFields: [
+              groupFields: [
+                  PropertyPaneTextField('meetingName', {
+                  label: 'Meeting Name'
+                }),
                 PropertyPaneTextField('description', {
                   label: 'List Name'
                 }),
