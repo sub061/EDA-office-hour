@@ -1,73 +1,74 @@
-# office-hour-calender
+Office Hour Calendar Web Part
+This SharePoint web part displays a calendar of office hour meetings in a customizable slider format. Users can view upcoming or past meetings, filter events based on date, and interact with each event to register or get more details.
 
-## Summary
+Table of Contents
+Overview
+Features
+Setup
+Properties
+Methods
+Usage
+Error Handling
+Slider Integration
+Dependencies
+Overview
+The OfficeHourCalendarWebPart is a custom SharePoint client-side web part built with TypeScript and leverages the SharePoint Framework (SPFx). It retrieves events from a specified SharePoint list and displays them in a slider. This component enables users to filter events based on their type (upcoming or past) and renders each event with relevant details.
 
-Short summary on functionality and used technologies.
+Features
+Dynamic Event Loading: Loads events from a specified SharePoint list.
+Date-Based Filtering: Filters events to show only upcoming or past events.
+Sortable Events: Sorts events by date.
+Customizable Slider: Renders events in a slider with controls for navigation.
+Event Registration Links: Each event displays a registration link.
+Setup
+Prerequisites
+SharePoint Online or SharePoint 2019.
+SharePoint Framework (SPFx) set up in your environment.
+Installation
+Clone this repository and navigate to the folder.
+Run npm install to install dependencies.
+Deploy the web part to your SharePoint environment.
+Compilation
+Run the following commands in your project folder:
 
-[picture of the solution in action, if possible]
+bash
+Copy code
+gulp serve
+This will run a local development server to preview the web part in SharePoint Workbench.
 
-## Used SharePoint Framework Version
+Properties
+The web part offers several customizable properties that can be set in the property pane:
 
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
+Property	Type	Description
+meetingName	string	The title for the meetings displayed in the web part.
+description	string	The SharePoint list name containing event data.
+noOfGrid	string	The number of items to display per row in the slider.
+meetingType	string	Specifies event type filter ("Upcoming" or "Past").
+Methods
+_loadCalendarEvents()
+Retrieves event data from the SharePoint list and initializes the slider.
+_getListData()
+Fetches data from the specified SharePoint list using SPHttpClient.
+filterEventsAfterToday(data: ISPList[])
+Filters events to include only those that occur after the current date and time.
+filterEventsBeforeToday(data: ISPList[])
+Filters events to include only those that occurred before the current date and time.
+_renderCalendarEvents(events: ISPList[])
+Renders the event data in HTML and populates the slider. If no events match the filter, it displays a message indicating that no meetings are available.
+initializeSlider()
+Initializes the slider component using a custom Slider class for navigation.
+Usage
+Add the Web Part: Add the web part to your SharePoint page.
+Configure Properties:
+Set the Meeting Name, List Name, Number of Items in a Row, and Meeting Type through the property pane.
+Interact with Events: View filtered events in the slider and click on "Register" links for each event.
+Error Handling
+If the SharePoint list data fails to load, an error message is logged to the console with console.error.
 
-## Applies to
+Slider Integration
+The slider functionality is implemented using the Slider class, which accepts the slider container, items container, and navigation buttons (prev and next). Ensure that the necessary HTML structure and styles are applied for proper functionality.
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
-
-## Version history
-
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
-## Minimal Path to Awesome
-
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
-
-## Features
-
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+Dependencies
+SharePoint Framework (SPFx)
+@microsoft/sp-http: Used for making API requests to fetch SharePoint list data.
+@microsoft/sp-property-pane: Used to configure the web part properties.
